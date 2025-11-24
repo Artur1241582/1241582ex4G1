@@ -1,24 +1,43 @@
-algoritmo PercentagemPositivos
+inicio
 
-    ED: N, i, numero, positivos  inteiro
-    percentagem  real
+    repetir
+        escrever "Quantos números pretende inserir? (N > 0)"
+        ler N
+    até N > 0
 
-    Escrever ("Quantos números pretende inserir?")
-    Ler (N)
+    positivos <- 0
+    soma_total <- 0
 
-    positivos ← 0
+    soma_neg <- 0
+    cont_neg <- 0
 
-    Para i de 1 até N faça
-        Escrever ("Introduza o número ", i, ":")
-        Ler (numero)
+    para i <- 1 até N passo 1 faça
+        escrever "Introduza um número:"
+        ler num
 
-        Se numero > 0 então
-            positivos ← positivos + 1
+        soma_total <- soma_total + num
+
+        se num > 0 então
+            positivos <- positivos + 1
+        senão se num < 0 então
+            soma_neg <- soma_neg + num
+            cont_neg <- cont_neg + 1
         fimse
     fimpara
 
-    percentagem ← (positivos / N) * 100
+    percentagem <- (positivos / N) * 100
+    media_total <- soma_total / N
 
-    Escrever ("A percentagem de números positivos é: ", percentagem, "%")
-    
+    se cont_neg > 0 então
+        media_neg <- soma_neg / cont_neg
+    senão
+        media_neg <- 0   // ou "não existem números negativos"
+    fimse
+
+    escrever "Percentagem de números positivos: ", percentagem, "%"
+    escrever "Soma total dos números: ", soma_total
+    escrever "Média total dos números: ", media_total
+    escrever "Soma dos números negativos: ", soma_neg
+    escrever "Média dos números negativos: ", media_neg
+
 fim
