@@ -1,0 +1,24 @@
+algoritmo PercentagemPositivos
+
+    ED: N, i, numero, positivos  inteiro
+    percentagem  real
+
+    Escrever ("Quantos números pretende inserir?")
+    Ler (N)
+
+    positivos ← 0
+
+    Para i de 1 até N faça
+        Escrever ("Introduza o número ", i, ":")
+        Ler (numero)
+
+        Se numero > 0 então
+            positivos ← positivos + 1
+        fimse
+    fimpara
+
+    percentagem ← (positivos / N) * 100
+
+    Escrever ("A percentagem de números positivos é: ", percentagem, "%")
+    
+fim
